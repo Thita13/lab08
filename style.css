@@ -1,96 +1,161 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Prompt, sans-serif;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.blog-form {
-    background: #f5f5f5;
+  }
+  
+  .blog-form {
+    background: #e7e7e7;
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-}
-.blog-form input[type="text"],
-.blog-form textarea{
+  }
+  
+  .blog-form input[type="text"],
+  .blog-form textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.blog-form textarea{
+  }
+  
+  .blog-form textarea {
     height: 150px;
     resize: vertical;
-}
-
-.blog-post {
+  }
+  
+  .blog-post {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.blog-title {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-title {
     margin: 0 0 10px 0;
     color: #333;
-}
-
-.blog-date {
+  }
+  
+  .blog-date {
     color: #666;
     font-size: 0.9em;
     margin-bottom: 10px;
-}
-
-.blog-content {
+  }
+  
+  .blog-content {
     line-height: 1.6;
     margin-bottom: 15px;
-}
-
-.blog-actions {
-    text-align: right;
-    margin-top: 10px;
-}
-
-button {
+  }
+  
+  .blog-tags {
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  
+  .tag {
+    display: inline-block;
+    background: #ddd;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  button {
     padding: 8px 16px;
     margin-left: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.btn-submit {
+  }
+  
+  .btn-submit {
     background: #4caf50;
     color: white;
-}
-
-.btn-submit:hover {
-    background: #45a049;
-}
-
-.btn-edit {
-    background: #2196f3;
+  }
+  
+  .btn-submit:hover {
+    background: #238828;
+  }
+  
+  .btn-edit {
+    background: #dec401;
     color: white;
-}
-
-.btn-edit:hover {
-    background: #1e87db;
-}
-
-.btn-delete {
-    background: #f44336;
+  }
+  
+  .btn-edit:hover {
+    background: #be9202;
+  }
+  
+  .btn-delete {
+    background: #f0665d;
     color: white;
-}
-
-.btn-delete:hover {
+  }
+  
+  .btn-delete:hover {
     background: #da190b;
-}
-
-.hidden {
+  }
+  
+  .hidden {
     display: none;
-}
+  }
+  .filter-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+  }
+  
+  .filter-section input {
+      width: 250px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+  }
+  
+  .filter-section input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .filter-section button {
+      padding: 8px 16px;
+      color: white;
+      background-color: #5faafa;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  .filter-section button:hover {
+      background-color: #005bbc;
+  }
+  .filter-section {
+    background: #e7e7e7;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section input[type="text"],
+  .filter-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .filter-section textarea {
+    height: 150px;
+    resize: vertical;
+  }

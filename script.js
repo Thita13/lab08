@@ -1,5 +1,6 @@
+// Blog Class - จัดการข้อมูลบล็อก
 class Blog {
-    constructor(id,title,content) {
+    constructor(id, title, content, tags) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -24,6 +25,7 @@ class Blog {
     }
 }
 
+// BlogManager Class - จัดการข้อมูลบล็อกทั้งหมด
 class BlogManager {
     constructor() {
         this.blogs = this.loadFromLocalStorage();
@@ -62,6 +64,8 @@ class BlogManager {
         return data ? JSON.parse(data).map(b => new Blog(b.id, b.title, b.content, b.tags.join(", "))) : [];
     }
 }
+
+// BlogUI Class - จัดการ UI และ Events
 class BlogUI {
     constructor(blogManager) {
         this.blogManager = blogManager;
@@ -115,7 +119,6 @@ class BlogUI {
             this.contentInput.value = blog.content;
             this.tagsInput.value = blog.tags.join(", ");
             this.editIdInput.value = blog.id;
-            this.formTitle.textContent ="แก้ไขบล็อก";
             this.cancelBtn.classList.remove("hidden");
             window.scrollTo(0, 0);
         }
@@ -128,14 +131,13 @@ class BlogUI {
     }
     resetForm() {
         this.form.reset();
-        this.editIdInput.value = "เขียนบล็อกใหม่";
+        this.editIdInput.value = "";
         this.cancelBtn.classList.add("hidden");
     }
     render(filterTag = "") {
         this.blogList.innerHTML = this.blogManager.blogs
             .filter(blog => filterTag === "" || blog.tags.includes(filterTag))
-            .map(
-                (blog) => `
+            .map(blog => `
                 <div class="blog-post">
                     <h2 class="blog-title">${blog.title}</h2>
                     <div class="blog-date">อัปเดตเมื่อ: ${blog.getFormattedDate()}</div>
@@ -146,10 +148,11 @@ class BlogUI {
                         <button class="btn-delete" onclick="blogUI.deleteBlog(${blog.id})">ลบ</button>
                     </div>
                 </div>
-            `
-        )
-        .join("");
+            `)
+            .join("");
     }
 }
+
+// เริ่มต้นใช้งาน
 const blogManager = new BlogManager();
 const blogUI = new BlogUI(blogManager);
